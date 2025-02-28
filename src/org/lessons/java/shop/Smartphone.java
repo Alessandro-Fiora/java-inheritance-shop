@@ -17,6 +17,7 @@ public class Smartphone extends Prodotto {
         return this.IMEI;
     }
 
+    // Private perchè non settabile dall'esterno
     private void setIMEI(int IMEI) {
         this.IMEI = IMEI;
     }
@@ -25,7 +26,7 @@ public class Smartphone extends Prodotto {
         return this.storageCapacity;
     }
 
-    private void setStorageCapacity(int storageCapacity) {
+    public void setStorageCapacity(int storageCapacity) {
         this.storageCapacity = storageCapacity;
     }
 

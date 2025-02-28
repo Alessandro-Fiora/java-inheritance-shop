@@ -34,7 +34,7 @@ public class Prodotto {
         return this.code;
     }
 
-    // Private perchè non accessibile dall'esterno
+    // Private perchè non settabile dall'esterno
     private void setCode(int code) {
         this.code = code;
     }
