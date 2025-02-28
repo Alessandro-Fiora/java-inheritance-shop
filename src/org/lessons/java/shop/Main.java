@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Full price: " + iphone12.getFullPrice());
         iphone12.setStorageCapacity(256);
         System.out.println("Storage capacity: " + iphone12.getStorageCapacity());
+        System.out.println("Code: " + iphone12.getCode());
 
         // * Tv
         Tv samsungTv = new Tv("Samsung TV", "LG", 499.99, 55, true);
@@ -21,6 +22,7 @@ public class Main {
         System.out.println("Full price: " + samsungTv.getFullPrice());
         samsungTv.setInches(65);
         System.out.println("Inches: " + samsungTv.getInches());
+        System.out.println("Code: " + samsungTv.getCode());
 
         // * Headphones
         Headphones airpods = new Headphones("Airpods", "Samsung", 199.99, "White", true);
@@ -30,6 +32,7 @@ public class Main {
         System.out.println("Full price: " + airpods.getFullPrice());
         airpods.setColor("Black");
         System.out.println("Color: " + airpods.getColor());
+        System.out.println("Code: " + airpods.getCode());
 
     }
 }
