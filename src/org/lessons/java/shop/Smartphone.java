@@ -13,6 +13,22 @@ public class Smartphone extends Prodotto {
         this.storageCapacity = storageCapacity;
     }
 
+    public int getIMEI() {
+        return this.IMEI;
+    }
+
+    private void setIMEI(int IMEI) {
+        this.IMEI = IMEI;
+    }
+
+    public int getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    private void setStorageCapacity(int storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
     // * Utility methods
 
     private int generateRandomIMEI() {
