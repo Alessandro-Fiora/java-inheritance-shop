@@ -32,4 +32,15 @@ public class Headphones extends Prodotto {
         return this.getName() + " - " + this.color + " - " + this.getbrand() + " - €" + this.getFullPrice();
     }
 
+    @Override
+    public double getDiscountedPrice() {
+        int discountPercentage = 2;
+
+        if (!this.isWireless) {
+            discountPercentage = 7;
+        }
+
+        return this.getFullPrice() - (this.getFullPrice() * discountPercentage / 100);
+    }
+
 }

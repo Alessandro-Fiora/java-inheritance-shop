@@ -32,4 +32,15 @@ public class Tv extends Prodotto {
         return this.getName() + " - " + this.inches + " Pollici" + " - " + this.getbrand() + " - €" + this.getFullPrice();
     }
 
+    @Override
+    public double getDiscountedPrice() {
+        int discountPercentage = 2;
+
+        if (this.isSmart) {
+            discountPercentage = 10;
+        }
+
+        return this.getFullPrice() - (this.getFullPrice() * discountPercentage / 100);
+    }
+
 }

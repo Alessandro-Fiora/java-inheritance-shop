@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Carrello {
 
-    private Prodotto[] prodotti;
+    private Prodotto[] prodotti = new Prodotto[0];
 
-    public Carrello(Prodotto[] prodotti) {
-        this.prodotti = prodotti;
-    }
+    // public Carrello(Prodotto[] prodotti) {
+    //     this.prodotti = prodotti;
+    // }
 
     public Prodotto[] getProdotti() {
         return this.prodotti;
@@ -25,6 +25,24 @@ public class Carrello {
         }
         newProdotti[this.prodotti.length] = prodotto;
         this.prodotti = newProdotti;
+    }
+
+    // * Utility methods
+
+    public double getDiscountedTotal() {
+        double total = 0;
+        for (Prodotto prodotto : this.prodotti) {
+            total += prodotto.getDiscountedPrice();
+        }
+        return total;
+    }
+
+    public double getTotal() {
+        double total = 0;
+        for (Prodotto prodotto : this.prodotti) {
+            total += prodotto.getFullPrice();
+        }
+        return total;
     }
 
     public boolean askAddProdotto() {
@@ -100,28 +118,36 @@ public class Carrello {
     @Override
     public String toString() {
         String result = "";
-        double total = 0;
         for (Prodotto prodotto : this.prodotti) {
             result += prodotto.toString() + "\n";
-            total += prodotto.getFullPrice();
         }
-        result += String.format("Totale: € %.2f", total);
         return result;
     }
 
     public static void main(String[] args) {
         System.out.println("Checkout carrello");
-        Carrello carrello = new Carrello(new Prodotto[0]);
+        Carrello carrello = new Carrello();
         boolean continueAdding = true;
     
         while (continueAdding) {
             continueAdding = carrello.askAddProdotto();
         }
         
-        //* STAMPA CARRELLO
         System.out.println("Carrello:");
-        System.out.println(carrello.toString());
+        System.out.println(carrello);
+        System.out.println(String.format("Totale: € %.2f", carrello.getTotal()));
+
+        System.out.println("Hai la carta fedeltà? (y/n)");
+        Scanner scanner = new Scanner(System.in);
+        String response = scanner.nextLine();
+        if (response.toLowerCase().equals("y")) {
+            double total = carrello.getDiscountedTotal();
+            System.out.println(String.format("Totale scontato: € %.2f", total));
+        }else {
+        double total = carrello.getTotal();
+        System.out.println(String.format("Totale: € %.2f", total));
         
+        }
         
     }
 }

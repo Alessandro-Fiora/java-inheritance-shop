@@ -41,4 +41,15 @@ public class Smartphone extends Prodotto {
         return this.getName() + " - " + this.storageCapacity + " GB" + " - " + this.getbrand() + " - €" + this.getFullPrice();
     }
 
+    @Override
+    public double getDiscountedPrice() {
+        int discountPercentage = 2;
+
+        if (this.storageCapacity < 32) {
+            discountPercentage = 5;
+        }
+
+        return this.getFullPrice() - (this.getFullPrice() * discountPercentage / 100);
+    }
+
 }

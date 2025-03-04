@@ -77,6 +77,11 @@ public class Prodotto {
         return this.basePrice + (this.basePrice * this.taxPercentage / 100);
     }
 
+    public double getDiscountedPrice() {
+        int discountPercentage = 2;
+        return this.getFullPrice() - (this.getFullPrice() * discountPercentage / 100);
+    }
+
     public String getFullName(){
         if (this.name != null && this.name.length() > 0) {
             return this.code + "-" + this.name;
