@@ -73,8 +73,8 @@ public class Prodotto {
 
     // * Utility methods
 
-    public String getFullPrice() {
-        return String.format("%.2f", this.basePrice + (this.basePrice * this.taxPercentage / 100));
+    public double getFullPrice() {
+        return this.basePrice + (this.basePrice * this.taxPercentage / 100);
     }
 
     public String getFullName(){
@@ -88,6 +88,11 @@ public class Prodotto {
     private int generateRandomProductCode() {
         Random random = new Random();
         return random.nextInt(1000);
+    }
+
+    @Override
+    public String toString() {
+        return this.getName() + " - " + this.getbrand() + " - €" + this.getFullPrice();
     }
 
 }

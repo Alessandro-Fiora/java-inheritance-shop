@@ -36,4 +36,9 @@ public class Smartphone extends Prodotto {
         return new Random().nextInt(1000000000);
     }
 
+    @Override
+    public String toString() {
+        return this.getName() + " - " + this.storageCapacity + " GB" + " - " + this.getbrand() + " - €" + this.getFullPrice();
+    }
+
 }

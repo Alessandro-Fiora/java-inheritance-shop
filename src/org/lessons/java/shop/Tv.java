@@ -27,4 +27,9 @@ public class Tv extends Prodotto {
         this.isSmart = isSmart;
     }
 
+    @Override
+    public String toString() {
+        return this.getName() + " - " + this.inches + " Pollici" + " - " + this.getbrand() + " - €" + this.getFullPrice();
+    }
+
 }

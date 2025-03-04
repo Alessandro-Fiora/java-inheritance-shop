@@ -1,3 +1,3 @@
-## L06
+## L06/L07
 
-Java Inheritance Shop
+Java Inheritance Shop + Composizione e Polimorfismo

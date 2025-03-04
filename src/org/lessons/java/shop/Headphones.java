@@ -27,4 +27,9 @@ public class Headphones extends Prodotto {
         this.isWireless = isWireless;
     }
 
+    @Override
+    public String toString() {
+        return this.getName() + " - " + this.color + " - " + this.getbrand() + " - €" + this.getFullPrice();
+    }
+
 }
